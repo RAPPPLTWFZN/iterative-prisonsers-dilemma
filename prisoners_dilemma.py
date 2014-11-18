@@ -362,21 +362,23 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
 
 
 
-    ######
-    ######
-    #
+   #team gopro_2027
     elif player == 11:
         if getting_team_name:
-            return 'loyal vengeful'
-        else:
-            # use history, opponent_history, score, opponent_score
-            # to compute your strategy
-            if len(opponent_history)==0: #It's the first round: collude
+            return 'boogabagga'
+        else:   
+            if len(opponent_history)==0:
                 return 'c'
-            elif history[-1]=='c' and opponent_history[-1]=='b':
-                return 'b' # betray is they were severely punished last time
             else:
-                return 'c' #otherwise collude
+                try:
+                    if opponent_history[-1] == 'c' and opponent_history[-2] == 'b':
+                        return 'b'
+                except Exception:
+                    if opponent_history[-1] == 'b':
+                        return 'b'
+                    else:
+                        return 'b'
+    #team winner
 
 
 
